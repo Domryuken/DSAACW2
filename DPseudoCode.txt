@@ -1,0 +1,49 @@
+
+
+FindElement_D(A,n,p)
+	for i:=1 to n
+		for j:=1 to n
+			if(A[i][j] = p)
+				return true
+	return false
+END
+
+
+FindElement_D1(A,n,p)
+	for i:=1 to n
+		top:=n
+		mid:= n/2
+		bot:=1
+		while(top>bot)
+			if(A[i][mid] = p)
+				return true
+			else if(A[i][mid] < p)
+				bot := mid + 1
+			else (A[i][mid] < p)
+				top := mid - 1
+			mid := (top + bot)/2
+	return false
+END
+
+
+
+FindElement_D2(A,n,p)
+        x = n
+        y = 1
+        while(x>=0 AND y<n)
+        {
+            if(A[y][x] = p)
+            {
+                return true
+            }
+            else if(A[y][x] > p)
+            {
+                x = x-1
+            }
+            else
+            {
+                y = y+1
+            }
+        }
+        return false
+END
